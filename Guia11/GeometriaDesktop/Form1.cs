@@ -1,4 +1,5 @@
 using System.Drawing.Drawing2D;
+using GeometriaModels.Models;
 using GeometriaModels.Services;
 
 namespace GeometriaDesktop;
@@ -85,4 +86,20 @@ public partial class Form1 : Form
         lvwFiguras.Invalidate();
     }
     #endregion
+
+    private void btnRegistrar_Click(object sender, EventArgs e)
+    {
+        FiguraModel figuraModel = null;
+
+        if (rbCirculo.Checked)
+        {
+            double radio = Convert.ToDouble(tbRadio.Text);
+
+            figuraModel = new CirculoModel(radio);
+        }
+        else if (rbRectangulo.Checked)
+        {
+
+        }
+    }
 }

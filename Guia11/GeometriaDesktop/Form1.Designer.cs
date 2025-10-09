@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            button2 = new Button();
+            btnRegistrar = new Button();
             button1 = new Button();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            tbArea = new TextBox();
+            tbRadio = new TextBox();
+            tbAlto = new TextBox();
+            tbAncho = new TextBox();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             groupBox3 = new GroupBox();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            rbCirculo = new RadioButton();
+            rbRectangulo = new RadioButton();
             groupBox2 = new GroupBox();
+            lvwFiguras = new ListView();
             button4 = new Button();
             button3 = new Button();
-            lvwFiguras = new ListView();
             groupBox1.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -53,12 +53,12 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(btnRegistrar);
             groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(textBox4);
-            groupBox1.Controls.Add(textBox3);
-            groupBox1.Controls.Add(textBox2);
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(tbArea);
+            groupBox1.Controls.Add(tbRadio);
+            groupBox1.Controls.Add(tbAlto);
+            groupBox1.Controls.Add(tbAncho);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
@@ -71,14 +71,15 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Datos de la figura";
             // 
-            // button2
+            // btnRegistrar
             // 
-            button2.Location = new Point(518, 95);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 60);
-            button2.TabIndex = 10;
-            button2.Text = "Confirmar Registro";
-            button2.UseVisualStyleBackColor = true;
+            btnRegistrar.Location = new Point(518, 95);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.Size = new Size(75, 60);
+            btnRegistrar.TabIndex = 10;
+            btnRegistrar.Text = "Confirmar Registro";
+            btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // button1
             // 
@@ -89,33 +90,33 @@
             button1.Text = "Limpiar";
             button1.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // tbArea
             // 
-            textBox4.Location = new Point(358, 133);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 8;
+            tbArea.Location = new Point(358, 133);
+            tbArea.Name = "tbArea";
+            tbArea.Size = new Size(100, 23);
+            tbArea.TabIndex = 8;
             // 
-            // textBox3
+            // tbRadio
             // 
-            textBox3.Location = new Point(358, 95);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
-            textBox3.TabIndex = 7;
+            tbRadio.Location = new Point(358, 95);
+            tbRadio.Name = "tbRadio";
+            tbRadio.Size = new Size(100, 23);
+            tbRadio.TabIndex = 7;
             // 
-            // textBox2
+            // tbAlto
             // 
-            textBox2.Location = new Point(358, 56);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 6;
+            tbAlto.Location = new Point(358, 56);
+            tbAlto.Name = "tbAlto";
+            tbAlto.Size = new Size(100, 23);
+            tbAlto.TabIndex = 6;
             // 
-            // textBox1
+            // tbAncho
             // 
-            textBox1.Location = new Point(358, 19);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 5;
+            tbAncho.Location = new Point(358, 19);
+            tbAncho.Name = "tbAncho";
+            tbAncho.Size = new Size(100, 23);
+            tbAncho.TabIndex = 5;
             // 
             // label4
             // 
@@ -155,8 +156,8 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(radioButton2);
-            groupBox3.Controls.Add(radioButton1);
+            groupBox3.Controls.Add(rbCirculo);
+            groupBox3.Controls.Add(rbRectangulo);
             groupBox3.Location = new Point(20, 22);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(200, 100);
@@ -164,27 +165,27 @@
             groupBox3.TabStop = false;
             groupBox3.Text = "Tipo de Figura";
             // 
-            // radioButton2
+            // rbCirculo
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(6, 47);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(63, 19);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Circulo";
-            radioButton2.UseVisualStyleBackColor = true;
+            rbCirculo.AutoSize = true;
+            rbCirculo.Location = new Point(6, 47);
+            rbCirculo.Name = "rbCirculo";
+            rbCirculo.Size = new Size(63, 19);
+            rbCirculo.TabIndex = 1;
+            rbCirculo.TabStop = true;
+            rbCirculo.Text = "Circulo";
+            rbCirculo.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbRectangulo
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(6, 22);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(85, 19);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Rectangulo";
-            radioButton1.UseVisualStyleBackColor = true;
+            rbRectangulo.AutoSize = true;
+            rbRectangulo.Location = new Point(6, 22);
+            rbRectangulo.Name = "rbRectangulo";
+            rbRectangulo.Size = new Size(85, 19);
+            rbRectangulo.TabIndex = 0;
+            rbRectangulo.TabStop = true;
+            rbRectangulo.Text = "Rectangulo";
+            rbRectangulo.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -197,6 +198,14 @@
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Listado de Figuras";
+            // 
+            // lvwFiguras
+            // 
+            lvwFiguras.Location = new Point(6, 22);
+            lvwFiguras.Name = "lvwFiguras";
+            lvwFiguras.Size = new Size(452, 188);
+            lvwFiguras.TabIndex = 12;
+            lvwFiguras.UseCompatibleStateImageBehavior = false;
             // 
             // button4
             // 
@@ -216,19 +225,11 @@
             button3.Text = "Actualizar Listado";
             button3.UseVisualStyleBackColor = true;
             // 
-            // lvwFiguras
-            // 
-            lvwFiguras.Location = new Point(70, 59);
-            lvwFiguras.Name = "lvwFiguras";
-            lvwFiguras.Size = new Size(339, 119);
-            lvwFiguras.TabIndex = 12;
-            lvwFiguras.UseCompatibleStateImageBehavior = false;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 502);
+            ClientSize = new Size(679, 502);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "Form1";
@@ -246,18 +247,18 @@
         private GroupBox groupBox1;
         private GroupBox groupBox3;
         private GroupBox groupBox2;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private RadioButton rbCirculo;
+        private RadioButton rbRectangulo;
         private Label label4;
         private Label label3;
         private Label label2;
         private Label label1;
-        private Button button2;
+        private Button btnRegistrar;
         private Button button1;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox tbArea;
+        private TextBox tbRadio;
+        private TextBox tbAlto;
+        private TextBox tbAncho;
         private Button button4;
         private Button button3;
         private ListView lvwFiguras;
