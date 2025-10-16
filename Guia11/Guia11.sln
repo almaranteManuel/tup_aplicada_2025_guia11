@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35514.174 d17.12
+VisualStudioVersion = 17.12.35514.174
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometriaModels", "GeometriaModels\GeometriaModels.csproj", "{962245C3-900D-4778-8F7E-3C14A67EA68C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometriaDesktop", "GeometriaDesktop\GeometriaDesktop.csproj", "{DEA943C6-5153-4493-904E-30EC21BC8AAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometriaWebApi", "GeometriaWebApi\GeometriaWebApi.csproj", "{FC8C6E92-3677-4690-917F-4A073F53FDE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{DEA943C6-5153-4493-904E-30EC21BC8AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEA943C6-5153-4493-904E-30EC21BC8AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEA943C6-5153-4493-904E-30EC21BC8AAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC8C6E92-3677-4690-917F-4A073F53FDE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC8C6E92-3677-4690-917F-4A073F53FDE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC8C6E92-3677-4690-917F-4A073F53FDE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC8C6E92-3677-4690-917F-4A073F53FDE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

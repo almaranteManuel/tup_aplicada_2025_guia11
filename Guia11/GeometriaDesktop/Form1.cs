@@ -11,7 +11,25 @@ public partial class Form1 : Form
     public Form1(FigurasService figuraService)
     {
         InitializeComponent();
+        RadioButton_CheckedChanged(null, null);
         _figurasService = figuraService;
+        lvwInicializar();
+    }
+
+    private void RadioButton_CheckedChanged(object sender, EventArgs e)
+    {
+        if (rbCirculo.Checked)
+        {
+            tbRadio.Enabled = true;
+            tbAncho.Enabled = false;
+            tbAlto.Enabled = false;
+        }
+        else if (rbRectangulo.Checked)
+        {
+            tbRadio.Enabled = false;
+            tbAncho.Enabled = true;
+            tbAlto.Enabled = true;
+        }
     }
 
     #region lvw redibujado
@@ -89,17 +107,77 @@ public partial class Form1 : Form
 
     private void btnRegistrar_Click(object sender, EventArgs e)
     {
-        FiguraModel figuraModel = null;
-
-        if (rbCirculo.Checked)
+        FiguraModel figura = null;
+        if (rbRectangulo.Checked)
         {
-            double radio = Convert.ToDouble(tbRadio.Text);
-
-            figuraModel = new CirculoModel(radio);
+            figura = new RectanguloModel()
+            {
+                Ancho = Convert.ToDouble(tbAncho.Text),
+                Largo = Convert.ToDouble(tbAlto.Text)
+            };
         }
-        else if (rbRectangulo.Checked)
+        else if (rbCirculo.Checked)
         {
-
+            figura = new CirculoModel()
+            {
+                Radio = Convert.ToDouble(tbRadio.Text)
+            };
         }
+
+        if (figura != null)
+            _figurasService.AddFigura(figura);
+
+        button3.PerformClick();
+        button1.PerformClick();
+    }
+
+    private void button3_Click(object sender, EventArgs e)
+    {
+        lvwFiguras.Items.Clear();
+
+        foreach (var figura in _figurasService.GetAll())
+        {
+            var item = new ListViewItem();
+            if (figura is RectanguloModel r)
+            {
+                item = new ListViewItem(new string[]
+                {
+                    $"Rectangulo: #{r.Id}",
+                    $"Area: {r.Area:f2}",
+                    $"Ancho: {r.Ancho:f2}, Largo: {r.Largo:f2}"
+                });
+            }
+            else if (figura is CirculoModel c)
+            {
+                item = new ListViewItem(new string[]
+                {
+                    $"Circulo: #{c.Id}",
+                    $"Area: {c.Area:f2}",
+                    $"Radio: {c.Radio:f2}"
+                });
+            }
+
+            item.Tag = figura; //lo necesitamos para tomarlo luego cuando lo seleccionemos
+            lvwFiguras.Items.Add(item);
+        }
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        tbAncho.Clear();
+        tbAlto.Clear();
+        tbRadio.Clear();
+        tbArea.Clear();
+
+        tbAncho.Enabled = true;
+        tbAlto.Enabled = true;
+        tbRadio.Enabled = true;
+        tbArea.Enabled = true;
+
+        lvwFiguras.SelectedItems.Clear();
+        rbRectangulo.Checked = false;
+        rbCirculo.Checked = false;
+        rbRectangulo.Enabled = true;
+        rbCirculo.Enabled = true;
     }
 }

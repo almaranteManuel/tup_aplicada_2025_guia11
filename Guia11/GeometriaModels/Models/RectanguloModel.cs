@@ -4,4 +4,10 @@ public class RectanguloModel:FiguraModel
 {
     public double? Ancho {  get; set; }
     public double? Largo { get; set; }
+
+    //public RectanguloModel(double ancho, double largo)
+    //{
+    //    this.Ancho = ancho;
+    //    this.Largo = largo;
+    //}
 }

@@ -89,6 +89,7 @@
             button1.TabIndex = 9;
             button1.Text = "Limpiar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // tbArea
             // 
@@ -175,6 +176,7 @@
             rbCirculo.TabStop = true;
             rbCirculo.Text = "Circulo";
             rbCirculo.UseVisualStyleBackColor = true;
+            rbCirculo.CheckedChanged += RadioButton_CheckedChanged;
             // 
             // rbRectangulo
             // 
@@ -186,6 +188,7 @@
             rbRectangulo.TabStop = true;
             rbRectangulo.Text = "Rectangulo";
             rbRectangulo.UseVisualStyleBackColor = true;
+            rbRectangulo.CheckedChanged += RadioButton_CheckedChanged;
             // 
             // groupBox2
             // 
@@ -224,6 +227,7 @@
             button3.TabIndex = 10;
             button3.Text = "Actualizar Listado";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // Form1
             // 
