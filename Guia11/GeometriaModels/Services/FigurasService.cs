@@ -22,7 +22,6 @@ public class FigurasService
         return _figurasDAL.GetById(id);
     }
 
-
     public FiguraModel AddFigura(FiguraModel nueva)
     {
         return _figurasDAL.Add(nueva);

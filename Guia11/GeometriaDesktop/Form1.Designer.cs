@@ -218,6 +218,7 @@
             button4.TabIndex = 11;
             button4.Text = "Eliminar Registro";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // button3
             // 

@@ -180,4 +180,12 @@ public partial class Form1 : Form
         rbRectangulo.Enabled = true;
         rbCirculo.Enabled = true;
     }
+
+    private void button4_Click(object sender, EventArgs e)
+    {
+        FiguraModel figura = null;
+
+        if (figura != null)
+            _figurasService(figura);
+    }
 }
